@@ -1,0 +1,13 @@
+@font-face {
+    font-family: InstrumentSans;
+    src: url(../fonts/InstrumentSans-VariableFont_wdth\,wght.ttf);
+}
+
+:root {
+    --primary: #F2D0A7;
+    --secondary: #F29966;
+    --button-green: #06CF35;
+    --button-red: #E50B0B;
+    --button-brown: #A63F03;
+    --select-hover: #d6875a;
+}

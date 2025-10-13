@@ -1,0 +1,61 @@
+h2 {
+    font-weight: 300;
+    font-size: 28px;
+    margin: 0;
+}
+
+#timer-done-popup {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+}
+
+#timer-done-popup div button {
+    margin: auto;
+    height: 45px;
+    width: 50%;
+    font-family: InstrumentSans;
+    font-size: 18px;
+    background-color: var(--secondary);
+    border: 1px solid var(--secondary);
+    border-radius: 10px;
+}
+
+#timer-done-popup div button:active {
+    transform: scale(0.95);
+}
+
+#timer-done-popup div button:hover {
+    background-color: var(--button-brown);
+}
+
+#timer-done-popup > div {
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    background-color: var(--primary);
+    margin: 0 35px 90px 35px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#timer-done-popup div #thumbs-up-gif {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#timer-done-popup div div img {
+    width: 70%;
+}
+
+#timer-done-popup p {
+    font-size: 18px;
+    text-align: center;
+}

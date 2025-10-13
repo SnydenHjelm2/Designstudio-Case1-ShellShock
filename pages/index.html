@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | ShellShock</title>
+    <link rel="icon" href="../images/icon.png">
+    <link rel="stylesheet" href="../styles/root.css">
+    <link rel="stylesheet" href="../styles/popup.css">
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+    <header>
+        <div id="logo-div">
+            <img src="../images/logo.png">
+        </div>
+        <div id="controls-div">
+            <img src="../images/question-mark.png">
+            <img src="../images/hamburger.png">
+        </div>
+    </header>
+    <div id="info-text">
+        <p>Welcome to ShellShock, your egg boiling companion!<br></p>
+        <p>Pick egg size and boil type below and start cooking!</p>
+    </div>
+    <div id="egg-controls">
+        <div>
+            <label>Egg Size:</label>
+            <select id="size">
+                <option>Small</option>
+                <option>Medium</option>
+                <option>Large</option>
+                <option>XL</option>
+            </select>
+        </div>
+
+        <div>
+        <label>Boil Type:</label>
+            <select id="boil">
+                <option>Soft</option>
+                <option>Medium</option>
+                <option>Hard</option>
+            </select>
+        </div>
+    </div>
+    <div id="gif">
+        <div>
+            <img src="../images/question-egg.gif">
+        </div>
+    </div>
+    <div id="timer">
+        <p></p>
+    </div>
+    <div id="timer-controls">
+        <button id="start">
+            <img src="../images/start.png">
+        </button>
+        <button id="stop">
+            <img src="../images/stop.png">
+        </button>
+    </div>
+    <div id="timer-done-popup">
+        <div>
+            <h2>Times up!</h2>
+            <div id="thumbs-up-gif">
+                <img src="../images/thumbs-up-egg.gif">
+            </div>
+            <p>Enjoy your perfectly boiled eggs!<br>Bon Apple Teeth!</p>
+            <button>CLOSE</button>
+        </div>
+    </div>
+    <script src="../scripts/script.js"></script>
+</body>
+</html>
