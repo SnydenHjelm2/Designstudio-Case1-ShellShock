@@ -15,8 +15,8 @@
             <img src="../images/logo.png">
         </div>
         <div id="controls-div">
-            <img src="../images/question-mark.png">
-            <img src="../images/hamburger.png">
+            <img id="help" src="../images/question-mark.png">
+            <img id="menu" src="../images/hamburger.png">
         </div>
     </header>
     <div id="info-text">
@@ -43,9 +43,14 @@
             </select>
         </div>
     </div>
-    <div id="gif">
+    <div id="q-egg" class="gif">
         <div>
             <img src="../images/question-egg.gif">
+        </div>
+    </div>
+    <div id="d-egg" class="gif">
+        <div>
+            <img src="../images/dancing-egg.gif">
         </div>
     </div>
     <div id="timer">
@@ -67,6 +72,76 @@
             </div>
             <p>Enjoy your perfectly boiled eggs!<br>Bon Apple Teeth!</p>
             <button>CLOSE</button>
+        </div>
+    </div>
+    <div id="help-popup">
+        <div>
+            <div class="popup-header">
+                <h2>Help</h2>
+                <img id="help-exit" src="../images/exit2.png">
+            </div>
+            <p>Size Guide</p>
+            <ul>
+                <li>Small: < or ~ 40 grams</li>
+                <li>Medium: ~ 50 grams</li>
+                <li>Large: ~ 60 grams</li>
+                <li>Extra Large: ~ 70 grams</li>
+            </ul>
+            <div id="help-popup-gif">
+                <img src="../images/thinking-egg.gif">
+            </div>
+        </div>
+    </div>
+    <div id="menu-popup">
+        <div>
+            <div class="popup-header">
+                <h2>Menu</h2>
+                <img id="menu-exit" src="../images/exit2.png">
+            </div>
+            <nav>
+                <div id="home" class="nav-option">
+                    <p>Home</p>
+                    <img class="menu-arrow" src="../images/arrow.png">
+                </div>
+                <div id="recipes" class="nav-option">
+                    <p>Recipes</p>
+                    <img class="menu-arrow" src="../images/arrow.png">
+                </div>
+                <div id="settings" class="nav-option">
+                    <p>Settings</p>
+                    <img class="menu-arrow" src="../images/arrow.png">
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div id="settings-popup">
+        <header>
+            <div id="logo-div">
+                <img src="../images/logo.png">
+            </div>
+            <div id="controls-div">
+                <img id="settings-help" src="../images/question-mark.png">
+                <img id="setting-menu" src="../images/hamburger.png">
+            </div>
+        </header>
+        <div id="settings-popup-header">
+            <h2>Settings</h2>
+            <button id="settings-back-button">
+                <img src="../images/back-arrow.png">
+                Back to Timer
+            </button>
+        </div>
+        <div id="boil-technique" class="setting">
+            <div class="setting-header">
+                <h2>Boil Technique</h2>
+                <img title="Pick wether you put your eggs in cold water och directly into boiling water." src="../images/question-mark.png">
+            </div>
+            <p>Select your boiling technique. This will impact timer length.</p>
+            <div id="boil-technique-buttons">
+                <button class="unselected" id="cold-water">Cold Water</button>
+                <button class="selected" id="boiling-water">Boiling Water</button>
+            </div>
+            <p id="boil-technique-status">Boiling water selected</p>
         </div>
     </div>
     <script src="../scripts/script.js"></script>

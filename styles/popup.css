@@ -1,10 +1,176 @@
+#boil-technique-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+#boil-technique-buttons button {
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#boil-technique-status {
+    text-align: center;
+    margin: 5px 0px 5px 0px;
+}
+
 h2 {
     font-weight: 300;
     font-size: 28px;
     margin: 0;
 }
 
-#timer-done-popup {
+#help-popup #help-popup-gif {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#help-popup div img {
+    width: 60%;
+}
+
+#help-popup div .popup-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+#help-popup div .popup-header img {
+    width: 12%;
+    object-fit: contain;
+}
+
+#help-popup div .popup-header img:hover {
+    cursor: pointer;
+}
+
+#menu-popup > div {
+    display: flex;
+    flex-direction: column;
+    height: 250px;
+    width: 85%;
+    background-color: var(--primary);
+    margin: 0 35px 300px 35px;
+    border-radius: 10px;
+}
+
+#menu-popup div .popup-header {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+#menu-popup div .popup-header img {
+    width: 12%;
+    object-fit: contain;
+}
+
+#menu-popup div .popup-header img:hover {
+    cursor: pointer;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.nav-option {
+    border: 1px solid var(--secondary);
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 10px 0px 10px;
+}
+
+.nav-option:hover {
+    cursor: pointer;
+    background-color: var(--secondary);
+}
+
+.nav-option img {
+    width: 10%;
+    object-fit: contain;
+}
+
+.selected {
+    background-color: var(--button-green);
+    border: 1px solid var(--button-green);
+}
+
+.selected:active {
+    transform: scale(0.95);
+}
+
+.selected:hover {
+    background-color: var(--button-green-hover);
+}
+
+.setting {
+    margin: 30px 20px 30px 20px;
+    background-color: var(--secondary);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.setting-header {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.setting-header h2 {
+    font-size: 22px;
+    margin: 0;
+}
+
+.setting-header img {
+    width: 5%;
+}
+
+.setting-header p {
+    margin: 2px;
+}
+
+#settings-popup {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: var(--primary);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+#settings-popup-header {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 20px 0 20px;
+}
+
+#settings-popup-header button {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 16px;
+    background-color: var(--secondary);
+    border: 1px solid var(--secondary);
+    border-radius: 10px;
+}
+
+#settings-popup-header button:active {
+    transform: scale(0.95);
+}
+
+#settings-popup-header button:hover {
+    background-color: var(--button-brown);
+    cursor: pointer;
+}
+
+#settings-popup-header img {
+    width: 12%;
+}
+
+#timer-done-popup, #help-popup, #menu-popup {
     position: absolute;
     left: 0;
     top: 0;
@@ -14,6 +180,7 @@ h2 {
     z-index: 1;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 #timer-done-popup div button {
@@ -33,9 +200,10 @@ h2 {
 
 #timer-done-popup div button:hover {
     background-color: var(--button-brown);
+    cursor: pointer;
 }
 
-#timer-done-popup > div {
+#timer-done-popup > div, #help-popup > div {
     display: flex;
     flex-direction: column;
     height: 400px;
@@ -58,4 +226,17 @@ h2 {
 #timer-done-popup p {
     font-size: 18px;
     text-align: center;
+}
+
+.unselected {
+    background-color: var(--button-red);
+    border: 1px solid var(--button-red);
+}
+
+.unselected:active {
+    transform: scale(0.95);
+}
+
+.unselected:hover {
+    background-color: var(--button-red-hover);
 }
