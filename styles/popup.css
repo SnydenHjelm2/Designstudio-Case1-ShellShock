@@ -1,3 +1,14 @@
+#altitude select {
+    background-color: var(--primary);
+    border: 1px solid var(--primary);
+    border-radius: 5px;
+}
+
+#altitude select:hover {
+    background-color: #d6b893;
+    border-color: #d6b893;
+}
+
 #boil-technique-buttons {
     display: flex;
     justify-content: center;
@@ -92,6 +103,41 @@ nav {
     object-fit: contain;
 }
 
+#recipes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.recipe {
+    background-color: var(--secondary);
+    border-radius: 10px;
+    margin: 20px 20px 20px 20px;
+    padding: 10px;
+}
+
+.recipe h3 {
+    margin: 0;
+    font-weight: 400;
+}
+
+.recipe p {
+    margin: 2px;
+}
+
+#recipe-info-text {
+    margin: 5px 20px 5px 20px;
+}
+
+#recipes-header {
+    gap: 40px;
+}
+
+.recipe-link {
+    display: flex;
+    justify-content: flex-end;
+}
+
 .selected {
     background-color: var(--button-green);
     border: 1px solid var(--button-green);
@@ -103,6 +149,7 @@ nav {
 
 .selected:hover {
     background-color: var(--button-green-hover);
+    border-color: var(--button-green-hover);
 }
 
 .setting {
@@ -131,6 +178,14 @@ nav {
     margin: 2px;
 }
 
+#settings-help:hover {
+    cursor: pointer;
+}
+
+#settings-menu:hover {
+    cursor: pointer;
+}
+
 #settings-popup {
     position: absolute;
     left: 0;
@@ -141,13 +196,13 @@ nav {
     z-index: 1;
 }
 
-#settings-popup-header {
+#settings-popup-header, #recipes-header {
     display: flex;
     justify-content: space-between;
     margin: 0 20px 0 20px;
 }
 
-#settings-popup-header button {
+#settings-popup-header button, #recipes-header button {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -157,16 +212,16 @@ nav {
     border-radius: 10px;
 }
 
-#settings-popup-header button:active {
+#settings-popup-header button:active, #recipes-header button:active {
     transform: scale(0.95);
 }
 
-#settings-popup-header button:hover {
+#settings-popup-header button:hover, #recipes-header button:hover {
     background-color: var(--button-brown);
     cursor: pointer;
 }
 
-#settings-popup-header img {
+#settings-popup-header img, #recipes-header img {
     width: 12%;
 }
 

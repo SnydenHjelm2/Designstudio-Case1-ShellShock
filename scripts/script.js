@@ -1,9 +1,12 @@
 function driver() {
-    timerTime(eggSize, boilType);
+    timerTime(eggSize, boilType, true);
+    document.querySelector("#altitude select").value = "0m";
     timerDonePopup.style.display = "none";
     helpPopup.style.display = "none";
     menuPopup.style.display = "none";
     dancingEgg.style.display = "none";
+    settingsPopup.style.display = "none";
+    recipesPage.style.display = "none";
 }
 
 function msToTime(ms) {
@@ -17,6 +20,10 @@ function msToTime(ms) {
         timerText.textContent = `0${minutes}:0${Math.round(seconds)}`;
     } else if (minutes < 10) {
         timerText.textContent = `0${minutes}:${Math.round(seconds)}`;
+    } else if (Math.round(seconds) < 10) {
+        timerText.textContent = `${minutes}:0${Math.round(seconds)}`;
+    } else {
+        timerText.textContent = `${minutes}:${Math.round(seconds)}`;
     }
 }
 
@@ -41,41 +48,72 @@ function startTimer() {
     }, 1000);
 }
 
-function timerTime(size, type) {
+function timerTime(size, type, onRefresh) {
     let eggSize = size.value;
     let boilType = type.value;
+    let selectedBoilTechnique = document.querySelector(".selected");
+    let altitudeSelect = document.querySelector("#altitude select");
+    let extraTime = 0;
+
+    if (onRefresh) {
+        altitudeSelect.value = "0m";
+    }
+
+    if (selectedBoilTechnique.id === "cold-water") {
+        extraTime += 240000;
+    }
+
+    let altitude = parseInt(altitudeSelect.value.split("m")[0]);
+    let altitudeInFt = altitude * 3.28084;
+    altitudeInFt = Math.round(altitudeInFt);
+    if (altitudeInFt >= 13000) {
+        extraTime += 780000;
+    } else if (altitudeInFt >= 600000) {
+        extraTime += 120000;
+    } else if  (altitudeInFt >= 8000) {
+        extraTime += 480000;
+    } else if (altitudeInFt >= 6000) {
+        extraTime += 360000
+    } else if (altitudeInFt >= 4000) {
+        extraTime += 240000;
+    } else if (altitudeInFt >= 2000) {
+        extraTime += 120000;
+    } else if (altitudeInFt >= 1000) {
+        extraTime += 60000;
+    }
+    
 
     if (eggSize === "Small") {
         if (boilType === "Soft") {
-            timeMs = 5000;
+            timeMs = 240000 + extraTime;
         } else if (boilType === "Medium") {
-            timeMs = 360000;
+            timeMs = 360000 + extraTime;
         } else if (boilType === "Hard") {
-            timeMs = 480000;
+            timeMs = 480000 + extraTime;
         }
     } else if (eggSize === "Medium") {
         if (boilType === "Soft") {
-            timeMs = 270000;
+            timeMs = 270000 + extraTime;
         } else if (boilType === "Medium") {
-            timeMs = 390000;
+            timeMs = 390000 + extraTime;
         } else if (boilType === "Hard") {
-            timeMs = 510000;
+            timeMs = 510000 + extraTime;
         }
     } else if (eggSize === "Large") {
         if (boilType === "Soft") {
-            timeMs = 300000;
+            timeMs = 300000 + extraTime;
         } else if (boilType === "Medium") {
-            timeMs = 420000;
+            timeMs = 420000 + extraTime;
         } else if (boilType === "Hard") {
-            timeMs = 540000;
+            timeMs = 540000 + extraTime;
         }
     } else if (eggSize === "XL") {
         if (boilType === "Soft") {
-            timeMs = 330000;
+            timeMs = 330000 + extraTime;
         } else if (boilType === "Medium") {
-            timeMs = 450000;
+            timeMs = 450000 + extraTime;
         } else if (boilType === "Hard") {
-            timeMs = 570000;
+            timeMs = 570000 + extraTime;
         }
     }
 
@@ -87,6 +125,7 @@ const boilType = document.querySelector("#boil");
 const boilingWater = document.querySelector("#boiling-water");
 const coldWater = document.querySelector("#cold-water");
 const dancingEgg = document.querySelector("#d-egg");
+const eggControls = document.querySelector("#egg-controls");
 const eggSize = document.querySelector("#size");
 const gif = document.querySelector("#gif");
 const help = document.querySelector("#help");
@@ -97,14 +136,19 @@ const infoText = document.querySelector("#info-text");
 const menu = document.querySelector("#menu");
 const menuPopup = document.querySelector("#menu-popup");
 const menuPopupExit = document.querySelector("#menu-exit");
+const recipesBackButton = document.querySelector("#recipes-back-button");
+const recipesNav = document.querySelector("#recipes-nav");
+const recipesPage = document.querySelector("#recipes");
 const settings = document.querySelector("#settings");
 const settingsBackButton = document.querySelector("#settings-back-button");
 const settingsPopup = document.querySelector("#settings-popup");
 const startButton = document.querySelector("#start");
 const startButtonImg = document.querySelector("#start img");
 const stopButton = document.querySelector("#stop");
+const timer = document.querySelector("#timer");
 const timerDonePopup = document.querySelector("#timer-done-popup");
 const timerDonePopupExit = document.querySelector("#timer-done-popup div button");
+const timerControls = document.querySelector("#timer-controls");
 const timerText = document.querySelector("#timer p");
 const questionEgg = document.querySelector("#q-egg");
 let pause = false;
@@ -135,7 +179,7 @@ coldWater.addEventListener("click", () => {
         boilingWater.classList.add("unselected");
         boilTechniqueStatus.textContent = "Cold water selected";
     }
-})
+});
 
 timerDonePopupExit.addEventListener("click", () => {
     timerDonePopup.style.display = "none";
@@ -160,7 +204,14 @@ helpPopupExit.addEventListener("click", () => {
 });
 
 home.addEventListener("click", () => {
-   menuPopup.style.display = "none"; 
+    infoText.style.display = "block";
+    eggControls.style.display = "flex";
+    dancingEgg.style.display = "none";
+    questionEgg.style.display = "block";
+    timer.style.display = "block";
+    timerControls.style.display = "flex";
+    recipesPage.style.display = "none";
+    menuPopup.style.display = "none";
 });
 
 menu.addEventListener("click", () => {
@@ -171,8 +222,42 @@ menuPopupExit.addEventListener("click", () => {
     menuPopup.style.display = "none";
 });
 
+recipesBackButton.addEventListener("click", () => {
+    infoText.style.display = "block";
+    eggControls.style.display = "flex";
+    dancingEgg.style.display = "none";
+    questionEgg.style.display = "block";
+    timer.style.display = "block";
+    timerControls.style.display = "flex";
+    recipesPage.style.display = "none";
+});
+
+recipesNav.addEventListener("click", () => {
+    infoText.style.display = "none";
+    eggControls.style.display = "none";
+    dancingEgg.style.display = "none";
+    questionEgg.style.display = "none";
+    timer.style.display = "none";
+    timerControls.style.display = "none";
+    recipesPage.style.display = "flex";
+    menuPopup.style.display = "none";
+});
+
+settings.addEventListener("click", () => {
+    menuPopup.style.display = "none";
+    recipesPage.style.display = "none";
+    infoText.style.display = "block";
+    eggControls.style.display = "flex";
+    dancingEgg.style.display = "none";
+    questionEgg.style.display = "block";
+    timer.style.display = "block";
+    timerControls.style.display = "flex";
+    settingsPopup.style.display = "block";
+});
+
 settingsBackButton.addEventListener("click", () => {
     settingsPopup.style.display = "none";
+    timerTime(eggSize, boilType);
 });
 
 startButton.addEventListener("click", () => {
@@ -202,6 +287,8 @@ stopButton.addEventListener("click", () => {
     dancingEgg.style.display = "none";
     startButton.classList.remove("pause");
     startButtonImg.src = "../images/start.png";
+    infoText.innerHTML = `<p>Welcome to ShellShock, your egg boiling companion!<br></p>
+        <p>Pick egg size and boil type below and start cooking!</p>`;
 });
 
 driver();

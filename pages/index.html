@@ -103,7 +103,7 @@
                     <p>Home</p>
                     <img class="menu-arrow" src="../images/arrow.png">
                 </div>
-                <div id="recipes" class="nav-option">
+                <div id="recipes-nav" class="nav-option">
                     <p>Recipes</p>
                     <img class="menu-arrow" src="../images/arrow.png">
                 </div>
@@ -118,10 +118,6 @@
         <header>
             <div id="logo-div">
                 <img src="../images/logo.png">
-            </div>
-            <div id="controls-div">
-                <img id="settings-help" src="../images/question-mark.png">
-                <img id="setting-menu" src="../images/hamburger.png">
             </div>
         </header>
         <div id="settings-popup-header">
@@ -143,7 +139,78 @@
             </div>
             <p id="boil-technique-status">Boiling water selected</p>
         </div>
+        <div id="altitude" class="setting">
+            <div class="setting-header">
+                <h2>Altitude</h2>
+                <img title="Your altitude above sea level could impact how long your eggs need to boil." src="../images/question-mark.png">
+            </div>
+            <p>Select your altitude above sea level. This might impact timer length.</p>
+            <select>
+                <option>0m</option>
+                <option>500m</option>
+                <option>1000m</option>
+                <option>1500m</option>
+                <option>2000m</option>
+                <option>2500m</option>
+                <option>3000m</option>
+                <option>3500m</option>
+                <option>4000m</option>
+            </select>
+        </div>
+    </div>
+    <div id="recipes">
+        <div id="recipes-header">
+            <h2>Recipes</h2>
+            <button id="recipes-back-button">
+                <img src="../images/back-arrow.png">
+                Back to Timer
+            </button>
+        </div>
+        <p id="recipe-info-text">Here you can view delicious egg recipes. Get inspired or try something new!</p>
+        <div class="recipe">
+            <h3>Recipe 1</h3>
+            <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+            <div class="recipe-link">
+                <a href="#">Read More →</a>
+            </div>
+        </div>
+        <div class="recipe">
+            <h3>Recipe 2</h3>
+            <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+            <div class="recipe-link">
+                <a href="#">Read More →</a>
+            </div>
+        </div>
+        <div class="recipe">
+            <h3>Recipe 3</h3>
+            <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+            <div class="recipe-link">
+                <a href="#">Read More →</a>
+            </div>
+        </div>
+        <div class="recipe">
+            <h3>Recipe 4</h3>
+            <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+            <div class="recipe-link">
+                <a href="#">Read More →</a>
+            </div>
+        </div>
+        <div class="recipe">
+            <h3>Recipe 5</h3>
+            <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+            <div class="recipe-link">
+                <a href="#">Read More →</a>
+            </div>
+        </div>
+        <div class="recipe">
+            <h3>Recipe 6</h3>
+            <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+            <div class="recipe-link">
+                <a href="#">Read More →</a>
+            </div>
+        </div>
     </div>
     <script src="../scripts/script.js"></script>
+    <script src="../scripts/recipes.js"></script>
 </body>
 </html>
