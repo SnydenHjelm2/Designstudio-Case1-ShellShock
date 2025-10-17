@@ -130,7 +130,7 @@ nav {
 }
 
 #recipes-header {
-    gap: 40px;
+    gap: 150px;
 }
 
 .recipe-link {
@@ -222,7 +222,7 @@ nav {
 }
 
 #settings-popup-header img, #recipes-header img {
-    width: 12%;
+    width: 30%;
 }
 
 #timer-done-popup, #help-popup, #menu-popup {

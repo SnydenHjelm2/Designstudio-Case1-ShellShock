@@ -6,9 +6,9 @@
 :root {
     --primary: #F2D0A7;
     --secondary: #F29966;
-    --button-green: #06CF35;
+    --button-green: mediumseagreen;
     --button-green-hover: #09992b;
-    --button-red: #E50B0B;
+    --button-red: tomato;
     --button-red-hover: #c40a0a;
     --button-brown: #A63F03;
     --select-hover: #d6875a;
